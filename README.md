@@ -21,3 +21,62 @@ advanced css course project #2
   }
 }
 ```
+
+### Detail
+
+* 左右並排的列表 `.description list`
+
+```scss
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--line);
+  border-bottom: var(--line);
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 0 0 50%;
+    margin-bottom: 0.7rem;
+  }
+
+  // 使用 masks 給 svg icon 加上顏色
+  &__item::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.7rem;
+
+    background-color: var(--color-primary);
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+}
+```
+> 延伸閱讀: [CSS Masks 圖片遮罩效果](https://w3c.hexschool.com/blog/24db18f8)
+
+
+* 用戶回饋卡片的 `::before` 圖標
+
+```scss
+.review {
+  position: relative;
+  // 略...
+
+  &::before {
+    content: '\201C';
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--color-grey-light-2);
+    font-family: sans-serif;
+    z-index: 1;
+  }
+}
+```
+> 延伸閱讀: [CSS Tricks](https://css-tricks.com/snippets/html/glyphs/)
