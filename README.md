@@ -1,6 +1,5 @@
 # Trillo
-
-advanced css course project #2
+hands-on project from the udemy course by Jonas Schmedtmann.
 
 ## Notes
 
